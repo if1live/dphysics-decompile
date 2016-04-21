@@ -1,0 +1,234 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DarkRiftAPI</name>
+    </assembly>
+    <members>
+        <member name="M:DarkRift.DarkRiftAPI.Connect(System.String)">
+            <summary>
+            	Connect to the specified IP.
+            </summary>
+            <returns><c>true</c> if connected; otherwise, <c>false</c>.</returns>
+            <param name="ip">The target IP.</param>
+            <remarks>
+            	Defaults to port 4296.
+            </remarks>
+        </member>
+        <member name="M:DarkRift.DarkRiftAPI.Connect(System.String,System.Int32)">
+            <summary>
+            	Connect to the specified IP through the specified port.
+            </summary>
+            <returns><c>true</c> if connected; otherwise, <c>false</c>.</returns>
+            <param name="ip">The target IP.</param>
+            <param name="port">The port to use.</param>
+        </member>
+        <member name="M:DarkRift.DarkRiftAPI.Recieve">
+            <summary>
+            	Recieves all data from the server and sends it out.
+            </summary>
+        </member>
+        <member name="M:DarkRift.DarkRiftAPI.SendMessageToServer(System.Byte,System.UInt16,System.Object)">
+            <summary>
+            	Sends data, tag and subject to the server.
+            </summary>
+            <param name="tag">The tag.</param>
+            <param name="subject">The subject.</param>
+            <param name="data">The data.</param>
+        </member>
+        <member name="M:DarkRift.DarkRiftAPI.SendMessageToID(System.UInt16,System.Byte,System.UInt16,System.Object)">
+            <summary>
+            	Sends data, tag and subject to a specific ID.
+            </summary>
+            <param name="tag">The tag.</param>
+            <param name="subject">The subject.</param>
+            <param name="data">The data.</param>
+        </member>
+        <member name="M:DarkRift.DarkRiftAPI.SendMessageToAll(System.Byte,System.UInt16,System.Object)">
+            <summary>
+            	Sends data, tag and subject to all clients and the server.
+            </summary>
+            <param name="tag">The tag.</param>
+            <param name="subject">The subject.</param>
+            <param name="data">The data.</param>
+        </member>
+        <member name="M:DarkRift.DarkRiftAPI.SendMessageToOthers(System.Byte,System.UInt16,System.Object)">
+            <summary>
+            	Sends data, tag and subject to all other clients.
+            </summary>
+            <param name="tag">The tag.</param>
+            <param name="subject">The subject.</param>
+            <param name="data">The data.</param>
+        </member>
+        <member name="M:DarkRift.DarkRiftAPI.ValidateNetworkMessage(DarkRift.NetworkMessage)">
+            <summary>
+            	Check if a network message breaches any rules.
+            </summary>
+            <returns><c>true</c>, if network message is valid, <c>false</c> otherwise.</returns>
+            <param name="msg">The NetworkMessage to validate.</param>
+        </member>
+        <member name="M:DarkRift.DarkRiftAPI.ResolveUnityTypes(System.Object)">
+            <summary>
+            	Resolves the unity types to carriers to be serialized.
+            </summary>
+            <returns>A serialisable type.</returns>
+            <param name="obj">The object to check.</param>
+        </member>
+        <member name="M:DarkRift.DarkRiftAPI.UnResolveUnityTypes(System.Object)">
+            <summary>
+            	Unresolve unity types from carriers.
+            </summary>
+            <returns>The resolve unity types.</returns>
+            <param name="obj">The object.</param>
+        </member>
+        <member name="M:DarkRift.DarkRiftAPI.SendNetworkMessage(DarkRift.NetworkMessage)">
+            <summary>
+            	Encode and send a network message.
+            </summary>
+            <param name="msg">The NetworkMessage.</param>
+        </member>
+        <member name="M:DarkRift.DarkRiftAPI.Disconnect">
+            <summary>
+            	Disconnect from the server.
+            </summary>
+        </member>
+        <member name="P:DarkRift.DarkRiftAPI.id">
+            <summary>
+            	This is the id of the client as assigned by the server.
+            </summary>
+        </member>
+        <member name="P:DarkRift.DarkRiftAPI.isConnected">
+            <summary>
+            	Are we connected to a server?
+            </summary>
+            <value><c>true</c> if connected; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="E:DarkRift.DarkRiftAPI.onData">
+            <summary>
+            	Occurs when data is received but only gives tag, subject and data.
+            </summary>
+        </member>
+        <member name="E:DarkRift.DarkRiftAPI.onDataDetailed">
+            <summary>
+            	Occurs when data is received but also passes the sender ID.
+            </summary>
+        </member>
+        <member name="E:DarkRift.DarkRiftAPI.onPlayerDisconnected">
+            <summary>
+            	Occurs when a player has disconnected.
+            </summary>
+        </member>
+        <member name="M:DarkRift.DarkRiftConnection.Connect(System.String)">
+            <summary>
+            	Connect to the specified IP.
+            </summary>
+            <returns><c>true</c> if connected; otherwise, <c>false</c>.</returns>
+            <param name="ip">The target IP.</param>
+            <remarks>
+            	Defaults to port 4296.
+            </remarks>
+        </member>
+        <member name="M:DarkRift.DarkRiftConnection.Connect(System.String,System.Int32)">
+            <summary>
+            	Connect to the specified IP through the specified port.
+            </summary>
+            <returns><c>true</c> if connected; otherwise, <c>false</c>.</returns>
+            <param name="ip">The target IP.</param>
+            <param name="port">The port to use.</param>
+        </member>
+        <member name="M:DarkRift.DarkRiftConnection.Recieve">
+            <summary>
+            	Recieves all data from the server and sends it out.
+            </summary>
+        </member>
+        <member name="M:DarkRift.DarkRiftConnection.SendMessageToServer(System.Byte,System.UInt16,System.Object)">
+            <summary>
+            	Sends data, tag and subject to the server.
+            </summary>
+            <param name="tag">The tag.</param>
+            <param name="subject">The subject.</param>
+            <param name="data">The data.</param>
+        </member>
+        <member name="M:DarkRift.DarkRiftConnection.SendMessageToID(System.UInt16,System.Byte,System.UInt16,System.Object)">
+            <summary>
+            	Sends data, tag and subject to a specific ID.
+            </summary>
+            <param name="tag">The tag.</param>
+            <param name="subject">The subject.</param>
+            <param name="data">The data.</param>
+        </member>
+        <member name="M:DarkRift.DarkRiftConnection.SendMessageToAll(System.Byte,System.UInt16,System.Object)">
+            <summary>
+            	Sends data, tag and subject to all clients and the server.
+            </summary>
+            <param name="tag">The tag.</param>
+            <param name="subject">The subject.</param>
+            <param name="data">The data.</param>
+        </member>
+        <member name="M:DarkRift.DarkRiftConnection.SendMessageToOthers(System.Byte,System.UInt16,System.Object)">
+            <summary>
+            	Sends data, tag and subject to all other clients.
+            </summary>
+            <param name="tag">The tag.</param>
+            <param name="subject">The subject.</param>
+            <param name="data">The data.</param>
+        </member>
+        <member name="M:DarkRift.DarkRiftConnection.ValidateNetworkMessage(DarkRift.NetworkMessage)">
+            <summary>
+            	Check if a network message breaches any rules.
+            </summary>
+            <returns><c>true</c>, if network message is valid, <c>false</c> otherwise.</returns>
+            <param name="msg">The NetworkMessage to validate.</param>
+        </member>
+        <member name="M:DarkRift.DarkRiftConnection.ResolveUnityTypes(System.Object)">
+            <summary>
+            	Resolves the unity types to carriers to be serialized.
+            </summary>
+            <returns>A serialisable type.</returns>
+            <param name="obj">The object to check.</param>
+        </member>
+        <member name="M:DarkRift.DarkRiftConnection.UnResolveUnityTypes(System.Object)">
+            <summary>
+            	Unresolve unity types from carriers.
+            </summary>
+            <returns>The resolve unity types.</returns>
+            <param name="obj">The object.</param>
+        </member>
+        <member name="M:DarkRift.DarkRiftConnection.SendNetworkMessage(DarkRift.NetworkMessage)">
+            <summary>
+            	Encode and send a network message.
+            </summary>
+            <param name="msg">The NetworkMessage.</param>
+        </member>
+        <member name="M:DarkRift.DarkRiftConnection.Disconnect">
+            <summary>
+            	Disconnect from the server.
+            </summary>
+        </member>
+        <member name="P:DarkRift.DarkRiftConnection.id">
+            <summary>
+            	This is the id of the client as assigned by the server.
+            </summary>
+        </member>
+        <member name="P:DarkRift.DarkRiftConnection.isConnected">
+            <summary>
+            	Are we connected to a server?
+            </summary>
+            <value><c>true</c> if connected; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="E:DarkRift.DarkRiftConnection.onData">
+            <summary>
+            	Occurs when data is received but only gives tag, subject and data.
+            </summary>
+        </member>
+        <member name="E:DarkRift.DarkRiftConnection.onDataDetailed">
+            <summary>
+            	Occurs when data is received but also passes the sender ID.
+            </summary>
+        </member>
+        <member name="E:DarkRift.DarkRiftConnection.onPlayerDisconnected">
+            <summary>
+            	Occurs when a player has disconnected.
+            </summary>
+        </member>
+    </members>
+</doc>

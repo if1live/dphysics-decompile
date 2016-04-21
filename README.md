@@ -3,6 +3,7 @@ Decompile [DPhysics](https://www.assetstore.unity3d.com/en/#!/content/36206)
 
 * [DPhysics Evaluation](https://www.assetstore.unity3d.com/en/#!/content/36206)
 * Version: 1.0 (May 28, 2015)
+* Where is decompiled source : Assets/DPhysics/Core/Scripts/
 
 ## Why I decompile it?
 

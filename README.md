@@ -1,7 +1,12 @@
-# dphysics-decompile
-DPhysics (Decompiled)
+# DPhysics-decompile
+Decompile [DPhysics](https://www.assetstore.unity3d.com/en/#!/content/36206)
 
-## Why decompile it?
+* [DPhysics Evaluation](https://www.assetstore.unity3d.com/en/#!/content/36206)
+* Version: 1.0 (May 28, 2015)
+
+## Why I decompile it?
+
+![visual studio compile error](https://raw.githubusercontent.com/if1live/dphysics-decompile/master/screenshots/vs-error.png)
 
 ```
 1>------ Build started: Project: dphysics-decompile.CSharp, Configuration: Debug Any CPU ------
@@ -30,5 +35,14 @@ DPhysics (Decompiled)
 2>C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets(1819,5): warning MSB3258: The primary reference "DPhysics_Core" could not be resolved because it has an indirect dependency on the .NET Framework assembly "System.Data.SqlXml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" which has a higher version "4.0.0.0" than the version "2.0.0.0" in the current target framework.
 2>CSC : error CS0006: Metadata file 'D:\devel\dphysics-decompile\Temp\UnityVS_bin\Debug\Assembly-CSharp.dll' could not be found
 ========== Build: 0 succeeded, 2 failed, 0 up-to-date, 0 skipped ==========
-
 ```
+
+When I use DPhysics, I see above compile error message.
+This problem is caused by CLR DLL. DLL references C# 4.0 libraray.
+
+![decompile DLL](https://raw.githubusercontent.com/if1live/dphysics-decompile/master/screenshots/decompile-dll.png)
+
+## Reference
+* Unity3d forum
+  * http://forum.unity3d.com/threads/dphysics-deterministic-2d-physics-engine.315553/
+

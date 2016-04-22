@@ -43,6 +43,41 @@ This problem is caused by CLR DLL. DLL references C# 4.0 libraray.
 
 ![decompile DLL](https://raw.githubusercontent.com/if1live/dphysics-decompile/master/screenshots/decompile-dll.png)
 
+## Decompiel progress
+Decompile `Assets/DPhysics/Core/Plugins/DPhysics_Core.dll`, http://www.telerik.com/products/decompiler.aspx
+
+Find `ret = new FInt()`, `ret = new Vector2d()` and change them to comment, if ret is function argument and out value.
+
+Before 
+```
+public void AbsoluteValue(out FInt ret)
+{
+	ret = new FInt();
+	....
+```
+
+After 
+```
+public void AbsoluteValue(out FInt ret)
+{
+	//ret = new FInt();
+	....
+```
+
+Why? If ret and this is same, something is wrong.
+
+```
+public void Subtract(int OtherValue, out FInt ret)
+{
+	ret = new FInt();
+	ret.RawValue = this.RawValue - ((long)OtherValue << 20);
+}
+...
+// something wrong!
+FInt v = new FInt(10);
+v.Substract(v);
+```
+
 ## Reference
 * Unity3d forum
   * http://forum.unity3d.com/threads/dphysics-deterministic-2d-physics-engine.315553/
